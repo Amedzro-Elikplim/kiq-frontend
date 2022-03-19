@@ -13,6 +13,12 @@
     background-color: aliceblue;
 }
 
+.list {
+    padding: 5px;
+    margin: 5px;
+    font-size: larger;
+}
+
 .form {
     position: absolute;
     bottom: 0;
