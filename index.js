@@ -11,7 +11,7 @@ form.addEventListener('click', (e) => {
   const chatList = document.querySelector('.chat');
   e.preventDefault();
   const { value } = message;
-
+  li.className = 'list';
   li.classList.toggle('aliceblue');
 
   if (value) {
@@ -29,6 +29,7 @@ socket.on('chat message', (msg) => {
   const li = document.createElement('li');
   li.textContent = msg;
 
+  li.className = 'list';
   chatList.appendChild(li);
   window.scrollTo(0, document.body.scrollHeight);
 });
