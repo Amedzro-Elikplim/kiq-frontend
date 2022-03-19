@@ -1,3 +1,5 @@
+import DisplayChat from './modules/Display.js';
+
 const form = document.getElementById('btn');
 
 // eslint-disable-next-line no-undef
@@ -6,30 +8,21 @@ const socket = io('http://localhost:3000', {
 });
 
 form.addEventListener('click', (e) => {
-  const message = document.getElementById('message');
-  const li = document.createElement('li');
-  const chatList = document.querySelector('.chat');
   e.preventDefault();
+
+  const message = document.getElementById('message');
   const { value } = message;
-  li.className = 'list';
-  li.classList.toggle('aliceblue');
 
   if (value) {
     socket.emit('message', value);
   }
 
-  li.innerHTML = value;
-  chatList.appendChild(li);
+  DisplayChat(value);
 
   message.value = '';
 });
 
 socket.on('chat message', (msg) => {
-  const chatList = document.querySelector('.chat');
-  const li = document.createElement('li');
-  li.textContent = msg;
-
-  li.className = 'list';
-  chatList.appendChild(li);
+  DisplayChat(msg);
   window.scrollTo(0, document.body.scrollHeight);
 });
