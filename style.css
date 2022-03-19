@@ -3,3 +3,26 @@
     margin: 0;
     padding: 0;
 }
+
+.chat {
+    list-style-type: none;
+    padding: 10px;
+}
+
+.aliceblue {
+    background-color: aliceblue;
+}
+
+.form {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 7fr 1fr;
+    height: 30px;
+}
+
+.message-input {
+    border: 1px solid black;
+}
+
