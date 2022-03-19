@@ -26,3 +26,8 @@
     border: 1px solid black;
 }
 
+.submit-button {
+    background-color: rgb(85, 165, 235);
+    color: white;
+}
+
