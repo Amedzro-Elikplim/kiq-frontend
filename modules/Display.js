@@ -9,4 +9,4 @@ const DisplayChat = (value) => {
   chatList.appendChild(li);
 };
 
-export default DisplayChat;
+module.exports = DisplayChat;
