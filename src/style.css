@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.chat {
+    list-style-type: none;
+    padding: 10px;
+}
+
+.aliceblue {
+    background-color: aliceblue;
+}
+
+.list {
+    padding: 5px;
+    margin: 5px;
+    font-size: larger;
+}
+
+.form {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 7fr 1fr;
+    height: 30px;
+}
+
+.message-input {
+    border: 1px solid black;
+}
+
+.submit-button {
+    background-color: rgb(85, 165, 235);
+    color: white;
+}
+

@@ -1,9 +1,12 @@
-import DisplayChat from './modules/Display.js';
+// const config = require('config');
+import './style.css';
+
+const DisplayChat = require('../modules/Display.js');
 
 const form = document.getElementById('btn');
 
 // eslint-disable-next-line no-undef
-const socket = io('http://localhost:3000', {
+const socket = io(config.get('URL'), {
   withCredentials: true,
 });
 
