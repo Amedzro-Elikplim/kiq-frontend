@@ -1,4 +1,3 @@
-// const config = require('config');
 import './style.css';
 
 const DisplayChat = require('../modules/Display.js');
@@ -6,7 +5,7 @@ const DisplayChat = require('../modules/Display.js');
 const form = document.getElementById('btn');
 
 // eslint-disable-next-line no-undef
-const socket = io(config.get('URL'), {
+const socket = io('http://localhost:3000', {
   withCredentials: true,
 });
 
