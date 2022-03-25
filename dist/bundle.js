@@ -15,7 +15,7 @@
   \****************************/
 /***/ ((module) => {
 
-eval("const DisplayChat = (value) => {\n  const li = document.createElement('li');\n  const chatList = document.querySelector('.chat');\n\n  li.className = 'list';\n  li.classList.toggle('aliceblue');\n\n  li.innerHTML = value;\n  chatList.appendChild(li);\n};\n\nmodule.exports = DisplayChat;\n\n//# sourceURL=webpack://kiq-frontend/./modules/Display.js?");
+eval("const DisplayChat = (value) => {\r\n  const li = document.createElement('li');\r\n  const chatList = document.querySelector('.chat');\r\n\r\n  li.className = 'list';\r\n  li.classList.toggle('aliceblue');\r\n\r\n  li.innerHTML = value;\r\n  chatList.appendChild(li);\r\n};\r\n\r\nmodule.exports = DisplayChat;\n\n//# sourceURL=webpack://kiq-frontend/./modules/Display.js?");
 
 /***/ }),
 
@@ -136,7 +136,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\nconst DisplayChat = __webpack_require__(/*! ../modules/Display.js */ \"./modules/Display.js\");\n\nconst form = document.getElementById('btn');\n\n// eslint-disable-next-line no-undef\nconst socket = io('http://localhost:3000', {\n  withCredentials: true,\n});\n\nform.addEventListener('click', (e) => {\n  e.preventDefault();\n\n  const message = document.getElementById('message');\n  const { value } = message;\n\n  if (value) {\n    socket.emit('message', value);\n  }\n\n  DisplayChat(value);\n\n  message.value = '';\n});\n\nsocket.on('chat message', (msg) => {\n  DisplayChat(msg);\n  window.scrollTo(0, document.body.scrollHeight);\n});\n\n\n//# sourceURL=webpack://kiq-frontend/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\r\n\r\nconst DisplayChat = __webpack_require__(/*! ../modules/Display.js */ \"./modules/Display.js\");\r\n\r\nconst form = document.getElementById('btn');\r\n\r\n// eslint-disable-next-line no-undef\r\nconst socket = io('http://localhost:3000', {\r\n  withCredentials: true,\r\n});\r\n\r\nform.addEventListener('click', (e) => {\r\n  e.preventDefault();\r\n\r\n  const message = document.getElementById('message');\r\n  const { value } = message;\r\n\r\n  if (value) {\r\n    socket.emit('message', value);\r\n  }\r\n\r\n  DisplayChat(value);\r\n\r\n  message.value = '';\r\n});\r\n\r\nsocket.on('chat message', (msg) => {\r\n  DisplayChat(msg);\r\n  window.scrollTo(0, document.body.scrollHeight);\r\n});\r\n\n\n//# sourceURL=webpack://kiq-frontend/./src/index.js?");
 
 /***/ })
 
