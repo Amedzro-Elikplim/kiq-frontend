@@ -4,8 +4,12 @@ const DisplayChat = require('../modules/Display.js');
 
 const form = document.getElementById('btn');
 
-const enviroment = process.env.NODE_ENV;
-const URL = enviroment === 'development' ? 'http://localhost:3000' : 'https://kiq.herokuapp.com';
+let URL = '';
+if (process.env.NODE_ENV === 'development') {
+  URL = 'http://localhost:3000';
+} else {
+  URL = 'https://kiq.herokuapp.com';
+}
 // eslint-disable-next-line no-undef
 const socket = io(URL, {
   withCredentials: true,
