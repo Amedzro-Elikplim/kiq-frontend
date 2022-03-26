@@ -32,5 +32,6 @@ form.addEventListener('click', (e) => {
 
 socket.on('chat message', (msg) => {
   DisplayChat(msg);
+
   window.scrollTo(0, document.body.scrollHeight);
 });
