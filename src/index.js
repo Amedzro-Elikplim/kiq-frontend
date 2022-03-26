@@ -7,7 +7,7 @@ const form = document.getElementById('btn');
 // const enviroment = process.env.NODE_ENV;
 // const URL = enviroment === 'development' ? 'http://localhost:3000' : 'https://radiant-lowlands-52016.herokuapp.com/';
 // eslint-disable-next-line no-undef
-const socket = io('https://radiant-lowlands-52016.herokuapp.com/', {
+const socket = io('https://kiq.herokuapp.com/', {
   withCredentials: true,
 });
 
