@@ -11,7 +11,6 @@ const form = document.getElementById('btn');
 //   URL = 'https://kiq.herokuapp.com';
 // }
 
-
 // eslint-disable-next-line no-undef
 const socket = io('https://kiq.herokuapp.com', {
   withCredentials: true,
