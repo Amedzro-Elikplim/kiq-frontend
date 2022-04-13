@@ -4,24 +4,16 @@ const DisplayChat = require('../modules/Display.js');
 
 const form = document.getElementById('btn');
 
-// let URL = '';
-// if (process.env.SERVER_URL === undefined) {
-//   URL = 'http://localhost:3000';
-// } else {
-//   URL = 'https://kiq.herokuapp.com';
-// }
-
+const URL = process.env.SERVER_URL || 'http://localhost:3000';
 // eslint-disable-next-line no-undef
-const socket = io('https://kiq.herokuapp.com', {
+const socket = io(URL, {
   withCredentials: true,
 });
 
 form.addEventListener('click', (e) => {
   e.preventDefault();
-
   const message = document.getElementById('message');
   const { value } = message;
-
   if (value) {
     socket.emit('message', value);
   }
