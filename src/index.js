@@ -1,14 +1,9 @@
 import './style.css';
 
 const DisplayChat = require('../modules/Display.js');
+const URL = require('../modules/Url.js');
 
 const form = document.getElementById('btn');
-
-let URL = 'https://kiq.herokuapp.com';
-
-if (window.location.href === 'http://localhost:8080/') {
-  URL = 'http://localhost:3000';
-}
 
 // eslint-disable-next-line no-undef
 const socket = io(URL, {
