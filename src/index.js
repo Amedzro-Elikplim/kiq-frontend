@@ -4,10 +4,10 @@ const DisplayChat = require('../modules/Display.js');
 
 const form = document.getElementById('btn');
 
-let URL = 'http://localhost:8080';
+let URL = 'https://kiq.herokuapp.com';
 
-if (window.location.href === 'kiq.netlify.app') {
-  URL = 'https://kiq.herokuapp.com';
+if (window.location.href === 'http://localhost:8080/') {
+  URL = 'http://localhost:3000';
 }
 
 // eslint-disable-next-line no-undef
