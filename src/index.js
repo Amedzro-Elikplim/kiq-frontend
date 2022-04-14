@@ -4,7 +4,12 @@ const DisplayChat = require('../modules/Display.js');
 
 const form = document.getElementById('btn');
 
-const URL = process.env.SERVER_URL || 'http://localhost:3000';
+let URL = 'http://localhost:8080';
+
+if (window.location.href === 'kiq.netlify.app') {
+  URL = 'https://kiq.herokuapp.com';
+}
+
 // eslint-disable-next-line no-undef
 const socket = io(URL, {
   withCredentials: true,
@@ -25,6 +30,4 @@ form.addEventListener('click', (e) => {
 
 socket.on('chat message', (msg) => {
   DisplayChat(msg);
-
-  window.scrollTo(0, document.body.scrollHeight);
 });

@@ -20,8 +20,11 @@
 }
 
 .form {
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  left: 0;
+  overscroll-behavior: contain;
+  right: 0;
   width: 100vw;
   display: grid;
   grid-template-columns: 7fr 1fr;
