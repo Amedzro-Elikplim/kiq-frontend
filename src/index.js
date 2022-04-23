@@ -37,14 +37,16 @@ socket.on('chat message', (msg) => {
 const message = document.getElementById('message');
 message.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
-    const { value } = message;
-    if (value) {
-      socket.emit('message', value);
+    if (message.value) {
+      const { value } = message;
+      if (value) {
+        socket.emit('message', value);
+      }
+
+      DisplayChat(value);
+
+      message.value = '';
     }
-
-    DisplayChat(value);
-
-    message.value = '';
     e.preventDefault();
   }
 });
