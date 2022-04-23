@@ -2,7 +2,7 @@ import './style.css';
 
 const DisplayChat = require('../modules/Display.js');
 
-const form = document.getElementById('btn');
+const form = document.querySelector('i');
 
 let URL = 'https://kiq.herokuapp.com';
 
@@ -18,16 +18,33 @@ const socket = io(URL, {
 form.addEventListener('click', (e) => {
   e.preventDefault();
   const message = document.getElementById('message');
-  const { value } = message;
-  if (value) {
-    socket.emit('message', value);
+  if (message.value) {
+    const { value } = message;
+    if (value) {
+      socket.emit('message', value);
+    }
+
+    DisplayChat(value);
+
+    message.value = '';
   }
-
-  DisplayChat(value);
-
-  message.value = '';
 });
 
 socket.on('chat message', (msg) => {
   DisplayChat(msg);
+});
+
+const message = document.getElementById('message');
+message.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    const { value } = message;
+    if (value) {
+      socket.emit('message', value);
+    }
+
+    DisplayChat(value);
+
+    message.value = '';
+    e.preventDefault();
+  }
 });
