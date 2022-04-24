@@ -23,7 +23,7 @@
 
 .form {
   position: fixed;
-  bottom: 50px;
+  bottom: 0;
   left: 0;
   overscroll-behavior: contain;
   right: 0;
