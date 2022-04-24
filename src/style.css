@@ -10,13 +10,15 @@
 }
 
 .aliceblue {
-  background-color: aliceblue;
+  background-color: rgba(0, 28, 64, 0.7);
 }
 
 .list {
-  padding: 5px;
+  padding: 8px;
   margin: 5px;
   font-size: larger;
+  color: #fffffb;
+  border-radius: 10px;
 }
 
 .form {
@@ -32,10 +34,18 @@
 }
 
 .message-input {
-  border: 1px solid black;
+  border: 1px solid rgb(0, 0, 0, 10%);
+  border-radius: 15px;
+  padding-left: 15px;
+  font-size: 16px;
 }
 
 .submit-button {
   background-color: rgb(85, 165, 235);
   color: white;
+}
+
+i {
+  font-size: 20px;
+  color: #42acff;
 }
